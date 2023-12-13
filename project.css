@@ -1,0 +1,146 @@
+html {
+  --s: 67px;
+  --m: 4px;
+
+  --v1: rgb(19, 19, 19) 119.5deg, #0000 120.5deg;
+  --v2: #000 119.5deg, #0000 120.5deg;
+  background: conic-gradient(
+      at var(--m) calc(var(--s) * 0.5777),
+      transparent 270deg,
+      #000 0deg
+    ),
+    conic-gradient(
+      at calc(100% - var(--m)) calc(var(--s) * 0.5777),
+      #000 90deg,
+      transparent 0deg
+    ),
+    conic-gradient(from -60deg at 50% calc(var(--s) * 0.8662), var(--v1)),
+    conic-gradient(
+      from -60deg at 50% calc(var(--s) * 0.8662 + 2 * var(--m)),
+      var(--v2)
+    ),
+    conic-gradient(
+      from 120deg at 50% calc(var(--s) * 1.4435 + 3 * var(--m)),
+      var(--v1)
+    ),
+    conic-gradient(
+      from 120deg at 50% calc(var(--s) * 1.4435 + var(--m)),
+      var(--v2)
+    ),
+    linear-gradient(
+      90deg,
+      rgb(19, 19, 19) calc(50% - var(--m)),
+      #000 0 calc(50% + var(--m)),
+      rgb(19, 19, 19)
+    );
+  background-size: calc(var(--s) + 2 * var(--m))
+    calc(var(--s) * 1.732 + 3 * var(--m));
+  mix-blend-mode: lighten;
+  
+}
+
+html::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,rgb(1, 107, 1), rgb(0, 0, 0)) left/400% 100%;
+  animation: f 2s infinite alternate linear;
+}
+
+@keyframes f {
+  100% {
+    background-position: right;
+  }
+}
+
+
+.signin-container {
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #1f1c1c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.input-container {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: rgb(53, 50, 50);
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+h2 {
+  font-size: x-large;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+input[type="text"],
+input[type="password"],
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: 0px solid rgb(65, 59, 59);
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: #3cff00;
+  background-color: #6e6e6e;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: small;
+}
+
+button[type="submit"] {
+  border: 10px;
+  background-color: #00fc08;
+  color: rgb(53, 53, 53);
+  cursor: pointer;
+  font-family: sans-serif;
+}
+
+button[type="submit"]:hover {
+  border: 10px;
+  background-color: #6e6e6e;
+}
+
+button[type="submit"] {
+  font-size: medium;
+  font-weight: bold;
+  border: 10px;
+  background-color: #00fc08;
+}
+
+.options-container {
+  margin-top: 10px;
+}
+
+a {
+  color: #00fc08;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+a:hover {
+  text-decoration: underline;
+  font-family: sans-serif;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/* bugs: placeholder go up when click on the box | background be under the sign in box */
